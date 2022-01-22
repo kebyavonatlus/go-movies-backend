@@ -240,7 +240,7 @@ func (m *DBModel) DeleteMovie(id int) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
-	stmt := `delete from movie where id = $1`
+	stmt := `delete from movies where id = $1`
 
 	_, err := m.DB.ExecContext(ctx, stmt, id)
 
